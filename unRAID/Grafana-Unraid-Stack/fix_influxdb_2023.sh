@@ -1,4 +1,6 @@
 #!/bin/bash
+# This is a fix for the file located here: https://github.com/testdasi/static-ubuntu/blob/main/scripts-install/install-influxdb-telegraf.sh
+
 
 ## Install dependencies ##
 apt -y update \
