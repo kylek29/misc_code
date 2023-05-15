@@ -98,7 +98,7 @@ else
         start-stop-daemon --start -b --exec /usr/sbin/promtail -- -config.file=/config/promtail/promtail.yml
     fi
     
-    pidlist=$(pidof grafana-server)
+    pidlist=$(pidof grafana)
     if [ -z "$pidlist" ]
     then
         if [[ -f "${logout_folder}/healthcheck-no-error" ]]
