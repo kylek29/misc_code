@@ -9,7 +9,7 @@ logout_folder=${LOG_FOLDER:-"/config"}
 # Check and create new log folder if necessary. 
 if [ ! -d "$logout_folder" ]; then
   echo "Directory $logout_folder does not exist, creating it .."
-  mkdir -p "${logout_folder}"
+  mkdir -p "$logout_folder"
 fi
 
 
