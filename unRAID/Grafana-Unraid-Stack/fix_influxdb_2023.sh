@@ -40,6 +40,10 @@ apt -y autoremove \
     && apt -y clean \
     && rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*
     
+## Move the original healthcheck and replace it
+mv -f "/static-ubuntu/grafana-unraid-stack/healthcheck.sh" "/static-ubuntu/grafana-unraid-stack/healthcheck.old.sh"
+curl -sL "https://raw.githubusercontent.com/kylek29/misc_code/main/unRAID/Grafana-Unraid-Stack/healthcheck_2023.sh" -o "/static-ubuntu/grafana-unraid-stack/healthcheck.sh"
+chmod +x "/static-ubuntu/grafana-unraid-stack/healthcheck.sh"
 
 ## Notify
 echo "Fix completed .."
