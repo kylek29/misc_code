@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # Check if the ENV variable for a new Log Folder is set and replace it, otherwise use default.
 logout_folder=${LOG_FOLDER:-"${logout_folder}"}
 
