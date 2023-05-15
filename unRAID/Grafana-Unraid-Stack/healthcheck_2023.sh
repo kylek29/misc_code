@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # Check if the ENV variable for a new Log Folder is set and replace it, otherwise use default.
 logout_folder=${LOG_FOLDER:-"${logout_folder}"}
 
@@ -12,7 +12,7 @@ fi
 
 
 ## No healthcheck if healthcheck-disable is set ##
-if [[ -f "/healthcheck-disable" ]]
+if [[ -f "${logout_folder}/healthcheck-disable" ]]
 then
     touch ${logout_folder}/healthcheck-disable
 else    
