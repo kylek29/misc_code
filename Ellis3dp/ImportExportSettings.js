@@ -7,6 +7,15 @@
   * Support: None
   * Author: Kyle Kimsey
   * Code Snippets: Credit(s) inline.
+  * 
+  * Usage - Exporting:
+  * 1) Setup your settings in the Ellis3dp tool.
+  * 2) Click "Export" --> file is downloaded as export.json
+  * 
+  * Usage - Importing:
+  * 1) Click "Choose File" button --> select the file you want to upload.
+  * 2) Click "Import" --> Page should reload with the settings.
+  * 
 */
 
 
@@ -16,7 +25,7 @@ var container = document.querySelectorAll('div[class$="container"]');
 var new_div = document.createElement('div');
 new_div.className = 'save-buttons';
 //new_div.textContent = 'Testing Text';
-new_div.innerHTML = '<div class="save-buttons" style="display: block;position: absolute;top: 10px;left: 10px;"><form id="upload"><label for="file">File to upload</label><input type="file" id="file" accept=".json"><button>Upload</button><button onclick="fileSave()">Export</button></form></div>';
+new_div.innerHTML = '<div class="save-buttons" style="display: block;position: fixed;top: 10px;left: 10px;"><form id="upload"><label for="file">File to upload</label><input type="file" id="file" accept=".json"><button>Import</button><button onclick="fileSave()">Export</button></form></div>';
 
 container[0].appendChild(new_div);
 
@@ -95,4 +104,3 @@ function exportFile(data, filename, type) {
         }, 0); 
     }
 }
-
