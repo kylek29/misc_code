@@ -54,6 +54,14 @@ check_old_install() {
     echo "   --- Currently installed version: ${v}"
 }
 
+fix_release_info_script() {
+    # Fixes the lookup line for the release_info_script if still necessary.
+    echo "-- Making a backup copy before editing --> /orcaslicer/get_release_info.sh.bak" \
+    && cp -f /orcaslicer/get_release_info.sh /orcaslicer/get_release_info.sh.bak \
+    && sed -i 's/_Linux_ubuntu.zip/_Linux*.zip/g' /orcaslicer/get_release_info.sh \
+    && echo "-- Edits completed."
+}
+
 # Argument Group for Determining Function to Use
 
 option="${1}" 
@@ -66,6 +74,9 @@ case ${option} in
         ;; 
    -v)  echo "Checking the installed VERSION .."
         check_old_install
+        ;;
+   -f)  echo "Applying a fix to get_release_info.sh .."
+        fix_release_info_script
         ;; 
    *)  
         echo "`basename ${0}` "
@@ -73,7 +84,11 @@ case ${option} in
         echo "    -> Install: -i"
         echo "    -> Clean Up: -c"
         echo "    -> Check Installed Version: -v"
+        echo "    -> Fix get_release_info.sh: -f"
         echo "    -> Help: -?"
         exit 1 # Command to come out of the program with status 1
         ;; 
 esac 
+
+
+
