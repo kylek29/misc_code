@@ -1,7 +1,6 @@
 /** This abomination quickly hacked together by KyleK29
-  *
-  * To use, copy/paste the script into a browser injection plugin on the JavaScript portion:
-  * 	Extension I Use: https://chrome.google.com/webstore/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld
+  * To use, copy/paste the script into a browser injection plugin like on the JavaScript portion:
+  * https://chrome.google.com/webstore/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld
   * And configure to auto-run when the page loads.
   *
   * Date: 2023/05/22
@@ -83,8 +82,9 @@ function fileSave(){
 	setLocalStorage();
 
 	// Now retrieve and save
+	let filename = document.querySelector("#FILENAME").value;
 	let newSettings = window.localStorage.getItem("PA_SETTINGS");
-	exportFile(newSettings, "export.json", 'text/plain');
+	exportFile(newSettings, filename, "text/plain");
 }
 
 function exportFile(data, filename, type) {
