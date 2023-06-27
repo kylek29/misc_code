@@ -84,7 +84,7 @@ function fileSave(){
 	// Now retrieve and save
 	let filename = document.querySelector("#FILENAME").value;
 	let newSettings = window.localStorage.getItem("PA_SETTINGS");
-	exportFile(newSettings, filename, "text/plain");
+	exportFile(newSettings, filename+".json", "text/plain");
 }
 
 function exportFile(data, filename, type) {
